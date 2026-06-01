@@ -1,0 +1,28 @@
+services: 
+  ms_server:
+    container_name: ms_server  
+    build: 
+      context: ./calificaciones_service
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - MONGODB_URI=mongodb+srv://danielronaldmutumbajoy_db_user:1234@cluster0.1wkaiqt.mongodb.net/studentApp?appName=Cluster0
+      - API_FRONT=http://localhost:3000
+    command:  npm run start
+  
+  ms_client:
+    container_name: ms_client
+    build: 
+      context: ./fb_web_service
+    ports:
+      - "3000:80"
+  
+  reverse_proxi:
+    container_name: reverse_proxi
+    build:
+      context: ./reverse_proxi
+    ports:
+      - "80:80"
+    volumes:
+      - ./logs:/var/log/nginx

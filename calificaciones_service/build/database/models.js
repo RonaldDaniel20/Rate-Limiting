@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GradeModel = exports.CourseModel = exports.StudentModel = void 0;
+const shemaStudent_1 = require("./shemaStudent");
+const shemaCourse_1 = require("./shemaCourse");
+const shemaGrade_1 = require("./shemaGrade");
+const mongoose_1 = require("mongoose");
+const StudentModel = (0, mongoose_1.model)("Student", shemaStudent_1.studentSchema);
+exports.StudentModel = StudentModel;
+const CourseModel = (0, mongoose_1.model)("Course", shemaCourse_1.courseSchema);
+exports.CourseModel = CourseModel;
+const GradeModel = (0, mongoose_1.model)("Grade", shemaGrade_1.gradeSchema);
+exports.GradeModel = GradeModel;

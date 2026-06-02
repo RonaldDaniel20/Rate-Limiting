@@ -18,10 +18,10 @@ services:
     ports:
       - "3000:80"
   
-  reverse_proxi:
-    container_name: reverse_proxi
+  reverse_proxy:
+    container_name: reverse_proxy
     build:
-      context: ./reverse_proxi
+      context: ./reverse_proxy 
     ports:
       - "80:80"
     volumes:

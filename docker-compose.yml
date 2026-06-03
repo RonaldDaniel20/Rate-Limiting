@@ -7,7 +7,7 @@ services:
       - "3001:3001"
     environment:
       - PORT=3001
-      - MONGODB_URI=mongodb+srv://danielronaldmutumbajoy_db_user:1234@cluster0.1wkaiqt.mongodb.net/studentApp?appName=Cluster0
+      - MONGODB_URI=SECRET_MONGODB_URI
       - API_FRONT=http://localhost:3000
     command:  npm run start
   
